@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    color: whitesmoke;
+    margin: 0;
+}
+
+header {
+    height: 70px;
+    width: 100vw;
+    padding: 10px;
+    margin: 0;
+    background-color: white;
+}
+
+#logo {
+    height: 50px;
+    width: 150px;
+    float: left;
+    position: relative;
+    left: 5px;
+}
+
+#menu {
+    height: 50px;
+    width: 50px;
+    position: relative;
+    float: right;
+}
+
+.banner {
+    height: 550px;
+    width: 100vw;
+    background-color: lightpink;
+    background-image: url("./assets/spices.jpg");
+    background-size: cover;
+    position: relative;
+}
+
+h2 {
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    font-size: 30px;
+    font-style: italic;
+}
+
+button {
+    background-color: yellow;
+    color: orange;
+    font-size: 15px;
+    font-weight: 700;
+    position: relative;
+    top: 45%;
+    left: 45%;
+    padding: 3px 20px;
+    border-radius: 20px;
+    border: orange 5px solid;
+}
+
+.container {
+    height: 500px;
+    width: 100vw;
+    background-color: lightgray;
+    margin: 0;
+    position: relative;
+}
+
+.subsection {
+    position: absolute;
+    width: 30%;
+    height: 50%;
+}
+
+.subsection:nth-child(1) {
+    top: 0;
+    left: 20%;
+    background-color: chartreuse;
+}
+
+.subsection:nth-child(2) {
+    top: 0;
+    left: 50%;
+    background-color: chocolate;
+}
+
+.subsection:nth-child(3) {
+    top: 50%;
+    left: 20%;
+    background-color: cornflowerblue;
+}
+
+.subsection:nth-child(4) {
+    bottom: 0;
+    right: 0;
+    background-color: red;
+}
+
+.text {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+h3,
+p {
+    color: black;
+    width: 90%;
+}
+
+h3 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+p {
+    margin-top: -25px;
+}
+
+.icon {
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+}
