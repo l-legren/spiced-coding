@@ -50,5 +50,5 @@ var getTotaler = function () {
 
 var totaler = getTotaler();
 
-console.log(totaler(2));
-console.log(totaler(7));
+// console.log(totaler(2));
+// console.log(totaler(7));

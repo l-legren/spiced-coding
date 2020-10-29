@@ -5,7 +5,8 @@
 body {
     background-color: white;
     color: whitesmoke;
-    margin: 0;
+    margin: 0 auto;
+    height: auto;
 }
 
 header {
@@ -17,110 +18,165 @@ header {
 }
 
 #logo {
-    height: 50px;
-    width: 150px;
+    height: 45px;
+    width: auto;
     float: left;
     position: relative;
     left: 5px;
+    top: 15px;
 }
 
 #menu {
     height: 50px;
-    width: 50px;
+    width: auto;
     position: relative;
+    top: 15px;
     float: right;
 }
 
 .banner {
-    height: 550px;
+    height: 750px;
     width: 100vw;
-    background-color: lightpink;
+    background-blend-mode: multiply;
+    background-color: #beb5b5;
     background-image: url("./assets/spices.jpg");
     background-size: cover;
     position: relative;
+    text-align: center;
 }
 
 h2 {
-    position: absolute;
-    top: 30%;
-    left: 35%;
-    font-size: 30px;
+    text-align: center;
+    position: relative;
+    top: 40%;
+    font-size: 40px;
     font-style: italic;
+    font-weight: 500;
 }
 
 button {
     background-color: yellow;
     color: orange;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 700;
+    margin: 0 auto;
     position: relative;
-    top: 45%;
-    left: 45%;
-    padding: 3px 20px;
+    top: 40%;
+    padding: 3px 30px;
     border-radius: 20px;
     border: orange 5px solid;
 }
 
 .container {
-    height: 500px;
+    height: 250px;
     width: 100vw;
     background-color: lightgray;
     margin: 0;
     position: relative;
+    text-align: start;
 }
 
 .subsection {
     position: absolute;
-    width: 30%;
+    width: 35%;
     height: 50%;
 }
 
 .subsection:nth-child(1) {
     top: 0;
-    left: 20%;
-    background-color: chartreuse;
+    left: 15%;
 }
 
 .subsection:nth-child(2) {
     top: 0;
     left: 50%;
-    background-color: chocolate;
 }
 
 .subsection:nth-child(3) {
     top: 50%;
-    left: 20%;
-    background-color: cornflowerblue;
+    left: 15%;
 }
 
 .subsection:nth-child(4) {
     top: 50%;
     left: 50%;
-    background-color: red;
 }
 
 .text {
     display: inline-block;
     margin-left: 10px;
+    margin-top: 25px;
+    overflow-wrap: break-word;
+    width: 70%;
+    height: 100%;
 }
 
 h3,
 p {
     color: black;
-    width: 90%;
+    width: auto;
+    margin: 0 auto;
 }
 
 h3 {
-    font-size: 25px;
-    font-weight: bold;
+    font-size: 28px;
+    font-weight: 900;
+    padding: 0;
 }
 
 p {
-    margin-top: -25px;
+    font-size: 16px;
+    width: auto;
 }
 
 .icon {
     height: 50px;
-    width: 50px;
+    width: auto;
     display: inline-block;
+    width: auto;
+    position: relative;
+    top: auto;
+}
+
+button:hover {
+    background-color: salmon;
+}
+
+@media screen and (max-width: 450px) {
+    header {
+        height: 2.5vh;
+        width: 100vw;
+    }
+
+    #logo {
+        height: 1.5em;
+        width: auto;
+        position: absolute;
+    }
+
+    #menu {
+        height: 2.5em;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+
+    .banner {
+        height: 55vh;
+    }
+
+    h2 {
+        margin: 30px;
+        font-size: 30px;
+    }
+
+    button {
+        font-size: 15px;
+    }
+
+    .container {
+        height: 80vh;
+        text-align: center;
+    }
+
 }

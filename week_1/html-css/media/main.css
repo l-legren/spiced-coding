@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: teal;
+}
+
+header {
+    background-color: white;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+}
+
+.navigation-link {
+    color: teal;
+    margin: 10px;
+    font-size: 1.5em;
+}
+
+#burger-menu {
+    height: 3em;
+    display: none;
+}
+
+@media screen and (max-width: 720px) {
+    body {
+        background-color: antiquewhite;
+    }
+
+    .navigation-link {
+        display: none;
+        color: red;
+    }
+
+    #burger-menu {
+        display: inline-block;
+    }
+}
+
+@media screen and (min-width: 720px) {
+}
