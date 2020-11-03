@@ -1,0 +1,17 @@
+#ticker {
+  position: relative;
+  width: 100%;
+  border: 2px solid blue;
+  height: 1.5em;
+  overflow-x: hidden;
+}
+
+#headlines {
+  position: absolute;
+  left: 50%;
+  white-space: nowrap;
+}
+
+#headlines a {
+  padding-right: 30px;
+}
