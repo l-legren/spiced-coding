@@ -1,0 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+
+canvas {
+    background-color: white;
+    z-index: 1;
+}
+
+#outercanvas {
+    background-color: wheat;
+    border: solid 2px black;
+    z-index: 0;
+}
