@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+}
+
+.kitty-container {
+    position: relative;
+    overflow: hidden;
+    height: 600px;
+    width: 100vw;
+}
+
+.kitty-container img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transform: translate(100%);
+}
+
+.kitty-container .onscreen {
+    transition: transform 3s;
+    transform: translate(0);
+}
+
+.kitty-container .offscreen {
+    transition: transform 3s;
+    transform: translate(-100%);
+}
+
