@@ -1,0 +1,56 @@
+.container {
+    display: flex;
+    justify-content: flex-start;
+    width: 80%;
+    /* background-color: coral; */
+    flex-wrap: wrap;
+}
+
+.big {
+    width: 200px;
+    height: 200px;
+    margin: 5px;
+    display: flex;
+}
+
+.small {
+    width: 100px;
+    height: 100px;
+    display: flex;
+}
+
+#b1 {
+    background-color: grey;
+    justify-content: flex-end;
+}
+
+#b2 {
+    background-color: black;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+#b3 {
+    background-color: blue;
+}
+
+#b4 {
+    background-color: blueviolet;
+}
+
+#s1 {
+    background-color: orange;
+}
+
+#s2 {
+    background-color: yellow;
+}
+
+#s3 {
+    background-color: green;
+    align-self: flex-end;
+}
+
+#s4 {
+    background-color: pink;
+}
