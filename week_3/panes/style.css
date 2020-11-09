@@ -1,0 +1,41 @@
+#container {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    border: solid 5px black;
+}
+
+img {
+    height: 600px;
+    width: 800px;
+    object-fit: cover;
+}
+
+#bottom-img {
+    position: absolute;
+}
+
+#top-img {
+    position: absolute;
+    overflow: hidden;
+}
+
+#slider {
+    position: absolute;
+    height: 605px;
+    width: 10px;
+    background-color: black;
+    /* makes our slide start off in the center */
+    left: 400px;
+}
+
+/* #slider-grab {
+    color: white;
+    background-color: black;
+    position: relative;
+    left: 375px;
+    top: 275px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+} */
