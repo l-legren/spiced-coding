@@ -1,0 +1,305 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    color: whitesmoke;
+    margin: 0 auto;
+    height: auto;
+}
+
+header {
+    height: 70px;
+    width: 100vw;
+    padding: 10px;
+    margin: 0;
+    background-color: white;
+}
+
+#logo {
+    height: 45px;
+    width: auto;
+    float: left;
+    position: relative;
+    left: 5px;
+    top: 15px;
+}
+
+#menu {
+    height: 50px;
+    width: auto;
+    position: relative;
+    top: 15px;
+    float: right;
+}
+
+.banner {
+    height: 750px;
+    width: 100vw;
+    background-blend-mode: multiply;
+    background-color: #beb5b5;
+    background-image: url("./assets/spices.jpg");
+    background-size: cover;
+    position: relative;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    position: relative;
+    top: 40%;
+    font-size: 40px;
+    font-style: italic;
+    font-weight: 500;
+}
+
+button {
+    background-color: yellow;
+    color: orange;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 auto;
+    position: relative;
+    top: 40%;
+    padding: 3px 30px;
+    border-radius: 20px;
+    border: orange 5px solid;
+}
+
+.container {
+    height: 250px;
+    width: 100vw;
+    background-color: lightgray;
+    margin: 0;
+    position: relative;
+    text-align: start;
+    z-index: 0;
+}
+
+.subsection {
+    position: absolute;
+    width: 35%;
+    height: 50%;
+}
+
+.subsection:nth-child(1) {
+    top: 0;
+    left: 15%;
+}
+
+.subsection:nth-child(2) {
+    top: 0;
+    left: 50%;
+}
+
+.subsection:nth-child(3) {
+    top: 50%;
+    left: 15%;
+}
+
+.subsection:nth-child(4) {
+    top: 50%;
+    left: 50%;
+}
+
+.text {
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 25px;
+    overflow-wrap: break-word;
+    width: 70%;
+    height: 100%;
+}
+
+h3,
+p {
+    color: black;
+    width: auto;
+    margin: 0 auto;
+}
+
+h3 {
+    font-size: 28px;
+    font-weight: 900;
+    padding: 0;
+}
+
+p {
+    font-size: 16px;
+    width: auto;
+}
+
+.icon {
+    height: 50px;
+    width: auto;
+    display: inline-block;
+    width: auto;
+    position: relative;
+    top: auto;
+}
+
+button:hover {
+    background-color: salmon;
+}
+
+#overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    visibility: hidden;
+}
+
+#side-bar {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    right: -20%;
+    opacity: 1;
+    z-index: 2;
+    width: 20%;
+    height: 100%;
+}
+
+#overlay .container {
+    background-color: white;
+    margin-top: 50px;
+    padding-left: 30px;
+}
+
+#x {
+    color: black;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 1px 10px;
+}
+
+.side-links {
+    font-size: 28px;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+}
+
+#logout {
+    position: relative;
+    top: 20px;
+    font-size: 18px;
+}
+
+/* .on is the class we are dinamically adding to show and hide our side-bar */
+.on {
+    transition-property: transform;
+    transition-duration: 1s;
+    transform: translateX(-20%);
+    /* visibility: visible !important; */
+}
+
+/* .off {
+    transition-property: transform;
+    transition-duration: 1s;
+    transform: translateX(20%);
+    /* visibility: visible !important; */
+/* }  */
+
+/* ///////////////////////////// */
+/* WEBSITE GOES MOBILE!!!!! */
+/* ///////////////////////////// */ 
+
+.modalon {
+    background-color: rgba(0,0,0,0.5);
+    z-index: 4;
+}  
+
+
+
+.modal-dialog .container {
+    position: absolute;
+    top: 30vw;
+    left: 40vh;
+    background-color: white;
+    height: 250px;
+    width: 500px;
+    border-radius: 10px;
+    z-index: -1;
+    display: grid;
+    grid-template-rows: 0.5fr 1fr 3fr;
+}
+
+#modal-close {
+    color: black;
+    text-align: end;
+    right: 2px;
+    margin-right: 10px;
+    margin-top: 10px;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#modal-welcome {
+    color: black;
+    font-size: 25px;
+    margin-left: 15px;
+}
+
+#modal-text {
+    color: black;
+    font-size: 18px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 15px;
+}
+
+.underlined {
+    text-decoration: underline;
+    color: blue;
+}
+
+
+@media screen and (max-width: 450px) {
+    header {
+        height: 2.5vh;
+        width: 100vw;
+    }
+
+    #logo {
+        height: 1.5em;
+        width: auto;
+        position: absolute;
+    }
+
+    #menu {
+        height: 2.5em;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+
+    .banner {
+        height: 55vh;
+    }
+
+    h2 {
+        margin: 30px;
+        font-size: 30px;
+    }
+
+    button {
+        font-size: 15px;
+    }
+
+    .container {
+        height: 80vh;
+        text-align: center;
+    }
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Welcome to Spiced!</title>
+</head>
+<body>
+    <header>
+        <img id ="logo" src="./assets/spiced.png" alt="spiced logo">
+        <img id="menu" src="./assets/hamburgermenu.svg" alt="menu">
+    </header>
+    <div class="banner">
+        <h2>Welcome to Spiced and The Future</h2>
+        <button>Get started today</button>
+    </div>
+    
+    <div class="container">
+        <div class="subsection">
+            <img class="icon" src="./assets/cat.svg" alt="A cute cat">
+            <div class="text">
+                <h3>Best in class features</h3>
+                <p>Nobody does this stuff better than us. You can bet your life on that.</p>
+            </div>
+        </div>    
+        <div class="subsection">
+            <img class="icon" src="./assets/world.svg" alt="Our Wolrd">
+            <div class="text">
+                <h3>Reliable Service</h3>
+                <p>You can count on us to help you whenever you need it. We're talking around the clock service.</p>
+            </div>
+        </div>
+        
+        <div class="subsection">
+            <img class="icon" src="./assets/swim.svg" alt="A man swimming">
+            <div class="text">
+                <h3>An Acquired Taste</h3>
+                <p>It may make a little while for you to warm up to us but once you do you will never want to switch.</p>
+            </div>
+        </div>
+        <div class="subsection">
+            <img class="icon" src="./assets/columns.svg" alt="Greek columns">
+            <div class="text">
+                <h3>No limits</h3>
+                <p>There are absolutely no limits. We do not throttle. We do not cap.</p>
+            </div>     
+        </div>
+    </div>
+    <div id="overlay">
+        <div id="side-bar">
+            <div><span id="x">X</span></div>
+            <div class="container">
+                <div class="side-links"><a href="#" id="settings">Settings</a></div>
+                <div class="side-links"><a href="#" id="pricing">Pricing</a></div>
+                <div class="side-links"><a href="#" id="upgrade">Upgrade</a></div>
+                <div class="side-links"><a href="#" id="subscribe">Subscribe</a></div>
+                <div class="side-links"><a href="#" id="logout">Log out</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-dialog">
+        <div class="container">
+            <div id="modal-close">X</div>
+            <h1 id="modal-welcome">Welcome to our redesigned site!</h1>
+            <p id="modal-text">Would like to take a <span class="underlined">tour</span> of our new features?<br><br>By the way, this site uses cookies to track every little thing you do and if you are here we are going to assume you are ok with that</p>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
