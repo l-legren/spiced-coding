@@ -18,6 +18,7 @@ img {
 #top-img {
     position: absolute;
     overflow: hidden;
+    width: 50%;
 }
 
 #slider {

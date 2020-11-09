@@ -3,32 +3,25 @@
     var slider = $("#slider");
     var container = $("#container");
     var top = $("#top-img");
+    var topWidth = top.css("width");
     var bottom = $("#bottom-img");
-    var sliderGrab = $("#slider-grab");
+    // var sliderGrab = $("#slider-grab");
     var sliderMoving = false;
 
-
-    var sliderLeft = slider.css("left");
-    // var topLeft = top.css("left");
-    var bottomWidth = bottom.width();
-    // console.log(container.offset().left);
-    // console.log(sliderLeft);
-
-    $(document).on("mousedown", function(e) {
+    slider.on("mousedown", function(e) {
         sliderMoving = true;
-        slider.css("left", e.pageX + "px");
         console.log(sliderMoving);
     });
 
-    slider.on("mousemove", function(e) {
-        if (sliderMoving && e.pageX < 800 && e.pageX > 0) {
-            console.log(e.pageX);
+    container.on("mousemove", function(e) {
+        if (sliderMoving && e.clientX <= 800 && e.clientX >= 0) {
             console.log(sliderMoving);
-            slider.css("left", e.pageX + "px");
+            slider.css("left", e.clientX - 10 + "px");
+            top.css("width", e.clientX - 10 + "px");
         }
     });
 
-    $(document).on("mouseup", function() {
+    slider.on("mouseup", function() {
         sliderMoving = false;
         console.log(sliderMoving);
     });
