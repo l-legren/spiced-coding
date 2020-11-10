@@ -58,20 +58,31 @@
             var curHigh;
             for (var i = 0; i < renderedCountries.length; i++) {
                 if (!renderedCountries.eq(i).hasClass("highlighted")) {
-                    renderedCountries.eq(0).addClass("highlighted");
+                    // renderedCountries.eq(0).addClass("highlighted");
+                    curHigh = renderedCountries.eq(0);
+                    // console.log(curHigh);
                 } else {
                     curHigh = renderedCountries.eq(i);
                 }
             }
-            console.log(curHigh);
+            curHigh.addClass("highlighted");
             curHigh = curHigh.next();
-            curHigh.prev().removeClass("highlighted");
+            // curHigh.removeClass("highlighted");
         }
     });
 
-    searchField.on("click", function () {});
+    searchField.on("click", function (e) {
+        e.stopPropagation();
+        var htmlFocus = "";
+        for (var i = 0; i < 4; i++) {
+            htmlFocus += "<p>" + countries[i] + "</p>";
+        }
+        resultsContainer.html(htmlFocus);
+    });
 
-    !searchField.on("click", function () {});
+    $(document).on("click", function () {
+        resultsContainer.html("");
+    });
 })([
     "Afghanistan",
     "Albania",
