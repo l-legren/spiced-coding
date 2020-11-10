@@ -51,23 +51,24 @@
     });
 
     $(document).on("keydown", function (e) {
-        var renderedCountries = $("p");
+        var countries = $("p");
+        var highlighted = $(".highlighted");
         // console.log(renderedCountries.length);
-        if ($(e.keyCode === 40)) {
-            // console.log("arrowdown");
-            var curHigh;
-            for (var i = 0; i < renderedCountries.length; i++) {
-                if (!renderedCountries.eq(i).hasClass("highlighted")) {
-                    // renderedCountries.eq(0).addClass("highlighted");
-                    curHigh = renderedCountries.eq(0);
-                    // console.log(curHigh);
-                } else {
-                    curHigh = renderedCountries.eq(i);
-                }
+        if (e.keyCode == 40) {
+            if (!countries.hasClass("highlighted")) {
+                countries.eq(0).addClass("highlighted");
+            } else if (highlighted.length == 1 && !countries.eq(3).hasClass("highlighted")) {
+                // console.log(highlighted);
+                highlighted.removeClass("highlighted");
+                highlighted.next().addClass("highlighted");
             }
-            curHigh.addClass("highlighted");
-            curHigh = curHigh.next();
-            // curHigh.removeClass("highlighted");
+        } else if (e.keyCode == 38) {
+            if (!countries.hasClass("highlighted")) {
+                countries.eq(3).addClass("highlighted");
+            } else if (highlighted.length == 1 && !countries.eq(0).hasClass("highlighted")) {
+                highlighted.removeClass("highlighted");
+                highlighted.prev().addClass("highlighted");
+            }
         }
     });
 
