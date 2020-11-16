@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+
+}
+
+#board {
+    display:flex;
+    position: relative;
+    top: 250px;
+    border: 8px solid black;
+}
+
+#board-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.column {
+    /* background-color: blue; */
+}
+
+.slot {
+    background-color: blue;
+    height: 100px;
+    width: 100px;
+}
+
+.hole {
+    background-color: white;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    position: relative;
+    left: 10px;
+    top: 10px;
+}
+
+.player1 {
+    background-color: red;
+}
+
+.player2 {
+    background-color: black;
+}
+
+#victory-container1 {
+    display: flex;
+    justify-content: center;
+}
+
+#victory-container2 {
+    display: flex;
+    justify-content: center;
+}
+
+.victory1 {
+    background-color: black;
+    width: 100vw;
+    height: 200px;
+    position: absolute;
+    /* top: 30%; */
+    top: -20%;
+    z-index: 1;
+    font-size: 150px;
+    color: white;
+    font-weight: 900;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    align-self: center;
+    transition: transform 1s ease-in;
+}
+
+.victory2 {
+    background-color: black;
+    width: 100vw;
+    height: 200px;
+    position: absolute;
+    top: 120%;
+    font-size: 150px;
+    color: white;
+    font-weight: 900;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    align-self: center;
+    transition: transform 1s ease-in;
+}
+
+.onscreen1 {
+    /* transition-property: transform; */
+    transition-property: transform;
+    transform: translateY(138%);
+}
+
+.onscreen2 {
+    transition-property: transform;
+    transform: translateY(-235%);
+}
+
+.winning-slots {
+    border: 5px solid white;
+}
