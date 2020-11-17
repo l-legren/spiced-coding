@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.authors-info {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.card {
+    width: 500px;
+    height: 750px;
+    position: relative;
+    border: 1px solid black;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+img {
+    position: relative;
+    height: 400px;
+    width: 500px;
+    border: 5px black solid;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.name {
+    font-size: 20px;
+    font-weight: 900;
+    margin-left: 5px;
+}
+
+.born {
+    display: inline;
+    margin-left: 5px;
+    font-weight: 900;
+}
+
+.died {
+    display: inline;
+    margin-left: 5px;
+    font-weight: 900;
+}
+
+.quote {
+    position: relative;
+    margin-left: 10px;
+}

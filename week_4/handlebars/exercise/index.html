@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's handle it!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="authors-info"></div>
+
+    <script id="authorsId" type="text/x-handlebars-template">
+        {{#authors}}
+        <div class="card">
+            <img src={{photo}} alt="Photo of Author">
+            <div class="name">{{name}}</div>
+            <hr>
+            <div class="born-died">
+                <div class="born">{{born}} - </div>
+                <div class="died">{{died}}</div>
+            </div>
+            <hr>
+            <div class="writings-container"><u>Selected writings</u>
+                {{#selectedWritings}}
+                <ul class="writings">
+                    <li>{{.}}</li>
+                </ul>
+                {{/selectedWritings}}
+            </div>
+            <cite class="quote">
+                {{quote}}
+            </cite>
+        </div>
+        {{/authors}}
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
