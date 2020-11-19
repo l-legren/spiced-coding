@@ -29,53 +29,21 @@ const story = {
 function askQuestion(storyObj) {
     rl.question(chalk.bgMagenta(storyObj.q), (answer) => {
         // console.log(answer);
-        if (storyObj.answers[answer]) {
-            if (answer === "berlin") {
-                console.log(
-                    chalk.bgRed(
-                        storyObj.answers[answer]
-                    )
-                );
-                rl.close();
-            } else if (answer === "home") {
-                rl.question(chalk.bgMagenta(storyObj.answers.home.q), (answer2) => {
-                    // console.log(answer2);
-                    if (storyObj.answers.home.answers[answer2]) {
-                        if (answer2 === "yes") {
-                            console.log(
-                                chalk.bgRed(
-                                    storyObj.answers.home.answers[answer2]
-                                )
-                            );
-                            rl.close();
-                        } else {
-                            rl.question(chalk.bgMagenta(storyObj.answers.home.answers.no.q), (answer3) => {
-                                if (storyObj.answers.home.answers.no.answers[answer3]) {
-                                    if (answer3 === "yes") {
-                                        console.log(
-                                            chalk.red(
-                                                storyObj.answers.home.answers.no.answer[answer3]
-                                            )
-                                        );
-                                        rl.close();
-                                    } else {
-                                        console.log(
-                                            chalk.red(
-                                                storyObj.answers.home.answers.no.answers[answer3]
-                                            )
-                                        );
-                                        rl.close();
-                                    }
-                                }
-                            });
-                        }
-                    }
-                });
-            }
-            
+        if (typeof storyObj.answers[answer] === "string") {
+            console.log(
+                chalk.bgRed(
+                    storyObj.answers[answer]
+                )
+            );
+            rl.close();
+        } else if (typeof storyObj.answers[answer] === "object") {
+            // console.log(storyObj.answers[answer].q);
+            askQuestion(storyObj.answers[answer]);
         } else {
             console.log(
-                "Are we talking the same language at all?"
+                chalk.bgGray(
+                    "Are we talking the same language at all?"
+                )
             );
             askQuestion(storyObj);
         }
