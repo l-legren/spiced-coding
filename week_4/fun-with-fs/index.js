@@ -4,12 +4,12 @@ const logSizes = (path) => {
     const files = fs.readdir(path, { withFileTypes : true }, (err, content) => {
         if (err) {
             console.log(err);
-            return err;
+            return;
         }
         for (let i = 0; i < content.length; i++) {
             if (content[i].isFile()) {
                 // console.log(content[i]);
-                console.log(fs.stat(`${path}/${content[i].name}`, (err, stats) => {
+                fs.stat(`${path}/${content[i].name}`, (err, stats) => {
                     if (err) {
                         console.log("err: ", err);
                     }
@@ -18,7 +18,7 @@ const logSizes = (path) => {
                     } else {
                         console.log(`${path}/${content[i].name}: `, stats.size);
                     }
-                }));
+                });
             } else {
                 // console.log("It's a dir");
                 logSizes(`${path}/${content[i].name}`);
@@ -29,3 +29,4 @@ const logSizes = (path) => {
 };
 
 logSizes("./files");
+
