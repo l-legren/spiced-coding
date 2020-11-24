@@ -7,7 +7,7 @@ const projectList = () => {
     // loop through your list and create a string of html and a link for each item in the directory
     var htmlString = "";
     for (let i = 0; i < filesSync.length; i++) {
-        htmlString += `<a href="${myDir}/${filesSync[i].name}">${filesSync[i].name}</a>`;
+        htmlString += `<a href="/${filesSync[i].name}">${filesSync[i].name}</a><br>`;
     }
     // make sure you RETURN the completed html string
     return htmlString;

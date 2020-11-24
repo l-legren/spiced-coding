@@ -3,8 +3,6 @@ const fs = require("fs");
 const path = require("path");
 const { projectList } = require("./projectList.js");
 
-console.log(projectList());
-
 http.createServer((req, res) => {
     
     req.on("error", (err) => console.error(err));
@@ -65,8 +63,8 @@ http.createServer((req, res) => {
             
             if (req.url.endsWith("/")) {               
                 if (req.url === "/") {
-                    res.write(projectList());
                     res.setHeader("Content-Type", "text/html");
+                    res.write(projectList());
                     res.end();
                 } else {
                     const readStreamHtml = fs.createReadStream(filePath + "index.html");
