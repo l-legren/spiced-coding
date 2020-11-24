@@ -42,31 +42,29 @@ http.createServer((req, res) => {
                 ".html": "text/html",
                 ".css" : "text/css",
                 ".js" : "text/javascript",
-                "json": "application/json",
+                ".json": "application/json",
                 ".gif": "image/gif",
                 ".jpg": "image/jpeg",
                 ".png": "image/png",
                 ".svg": "image/svg+xml"
             };
 
-            console.log(res.header);
             res.setHeader("Content-type", `${contentType[path.extname(filePath)]}`);
             const readStreamHtml = fs.createReadStream(filePath);
             readStreamHtml.pipe(res);
 
             readStreamHtml.on("error", (err) => {
                 console.error(err);
+                res.statusCode = 500; // Internal server error
                 res.end();
             });
         } else {
             console.log("It's a directory!!!");
 
             if (req.url === "/") {
-                fs.writeFile("./projects/", projectList(), (err) => {
-                    if (err) {
-                        console.error(err);
-                    }
-                });
+                res.setHeader("Content-type", "text/html");
+                res.writeFile("./", projectList);
+                res.end();
             }
 
             if (req.url.endsWith("/")) {
