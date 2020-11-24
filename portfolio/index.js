@@ -1,7 +1,9 @@
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
-const projectList = require("./projectList");
+const { projectList } = require("./projectList.js");
+
+console.log(projectList());
 
 http.createServer((req, res) => {
     
@@ -60,23 +62,23 @@ http.createServer((req, res) => {
             });
         } else {
             console.log("It's a directory!!!");
-
-            if (req.url === "/") {
-                res.setHeader("Content-type", "text/html");
-                res.writeFile("./", projectList);
-                res.end();
-            }
-
-            if (req.url.endsWith("/")) {
-                const readStreamHtml = fs.createReadStream(filePath + "index.html");
-                res.setHeader("Content-type", "text-html");
-                readStreamHtml.pipe(res);
-
-                readStreamHtml.on("error", (err) => {
-                    console.error(err);
-                    res.statusCode = 404;
+            
+            if (req.url.endsWith("/")) {               
+                if (req.url === "/") {
+                    res.write(projectList());
+                    res.setHeader("Content-Type", "text/html");
                     res.end();
-                });
+                } else {
+                    const readStreamHtml = fs.createReadStream(filePath + "index.html");
+                    res.setHeader("Content-Type", "text-html");
+                    readStreamHtml.pipe(res);
+    
+                    readStreamHtml.on("error", (err) => {
+                        console.error(err);
+                        res.statusCode = 404;
+                        res.end();
+                    });
+                }          
             } else {
                 // redirect to the request url
                 // set the correct header that causes a redirect

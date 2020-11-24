@@ -13,6 +13,6 @@ const projectList = () => {
     return htmlString;
 };
 
-module.exports.projectList;
+module.exports.projectList = projectList;
 
 // console.log(projectList());
