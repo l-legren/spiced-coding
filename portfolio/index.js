@@ -1,6 +1,7 @@
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
+const projectList = require("./projectList");
 
 http.createServer((req, res) => {
     
@@ -59,6 +60,14 @@ http.createServer((req, res) => {
             });
         } else {
             console.log("It's a directory!!!");
+
+            if (req.url === "/") {
+                fs.writeFile("./projects/", projectList(), (err) => {
+                    if (err) {
+                        console.error(err);
+                    }
+                });
+            }
 
             if (req.url.endsWith("/")) {
                 const readStreamHtml = fs.createReadStream(filePath + "index.html");
