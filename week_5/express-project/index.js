@@ -14,35 +14,32 @@ app.use(cookieParser());
 app.use(express.static("./projects"));
 
 app.get("/", (req, res) => {
-    res.sendFile(`${__dirname}/index.html`);
+    console.log(req.cookies.cookies);
+    res.cookie("cookies", false);
+    if (req.cookies.cookies === "true") {
+        res.sendFile(`${__dirname}/index.html`);
+    } else {
+        res.redirect("/cookies");
+    }
 });
 
 app.get("/cookies", (req, res) => {
-    // res.sendFile(`${__dirname}/cookies.html`);
-    res.send(`
-        <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>This site use cookies</h1>
-    <p>We collect cookies and you won't get through until you accept it 🥴</p>
-    <input type="checkbox" name="cookies">Do you accept cookies???</input>
-    <input type="submit" value="submit">
-</body>
-</html>
-    `);
+    res.sendFile(`${__dirname}/cookies.html`);
 });
 
 app.post("/cookies", (req, res) => {
-    console.log("Cookies request made");
+    console.log("POST request was made to /cookies");
     console.log(req.body);
-    res.send(
-        `<h1>You are now registered</h1>`
-    );
+    const { cookies } = req.body;
+    if (cookies) {
+        res.cookie("cookies", true);
+        res.redirect("/");
+    } else {
+        res.cookie("cookies", false);
+        res.send(
+            "<h1>No cookies no site</h1><p>🛑 Without cookies you can not navigate the site 🛑</p>"
+        );
+    }
 });
 
 app.listen(8080, () => console.log("Listening to server on port 8080"));
