@@ -39,7 +39,11 @@ app.get("/projects/:project", (req, res) => {
             layout: "main",
             projects,
             selectedProject,
-            // project_name: req.url.slice(10)
+            helpers: {
+                playWith(name) {
+                    return `Play around with ${name}, it's great!!!`;
+                } 
+            }
         });
     } else {
         res.status(404);

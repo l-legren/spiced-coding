@@ -2,21 +2,21 @@
     {
         "name": "Connect 4",
         "directory": "connect4",
-        "description": "Lorem ipsum connect4"
+        "description": "Connect Four (also known as Four Up, Plot Four, Find Four, Four in a Row, Four in a Line, Drop Four, and Gravitrips in the Soviet Union) is a two-player connection board game, in which the players choose a color and then take turns dropping colored discs into a seven-column, six-row vertically suspended grid. The pieces fall straight down, occupying the lowest available space within the column. The objective of the game is to be the first to form a horizontal, vertical, or diagonal line of four of one's own discs. Connect Four is a solved game. The first player can always win by playing the right moves."
     },
     {
         "name": "Spotify API",
         "directory": "spotify_handlebars",
-        "description": "Lorem ipsum spoti"
+        "description": "Spotify is a digital music service that gives you access to millions of songs. Spotify is all the music you’ll ever need. Skip to content. Spotify Premium; Support; Download; Sign up; Log in; Toggle navigation. Spotify Premium. Get 3 months of Premium for free. Enjoy ad-free music, offline listening, and more. Cancel anytime. Get 3 months free. Individual plan only. Only $9.99/month after."
     },
     {
         "name": "Incremental Search",
         "directory": "incremental_2",
-        "description": "Lorem ipsum incremental"
+        "description": "In computing, incremental search, incremental find or real-time suggestions is a user interface interaction method to progressively search for and filter through text. As the user types text, one or more possible matches for the text are found and immediately presented to the user."
     },
     {
         "name": "Panes",
         "directory": "panes",
-        "description":"Lorem ipsum panes"
+        "description":"In this Panes example you will be able to see how much changed after the fall of the wall of Berlin. In this example it's displayed the Bouschestrasse in Alt-Treptow."
     }
 ]

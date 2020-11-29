@@ -17,7 +17,7 @@ header {
     top: 0px;
     height: 150px;
     width: 100%;
-    background-color: pink;
+    background-color: whitesmoke;
     display: flex;
     flex-direction: column;
     grid-column: 1 / 8;
@@ -35,8 +35,24 @@ header {
     top: -20px;
 }
 
+#divisory-above {
+    background-color: black;
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    top: 150px;
+}
+
+#divisory-below {
+    background-color: black;
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    bottom: 100px;
+}
+
 footer {
-    background-color: pink;
+    background-color: whitesmoke;
     position: absolute;
     bottom: 0px;
     height: 100px;
@@ -61,13 +77,14 @@ footer {
 }
 
 #single-project {
-    padding: 25px;
+    padding: 15px;
 }
 
 .screenshot {
     width: 200px;
     height: 200px;
-    border-radius: 20%;
+    border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%;
+    border: black solid 2px;
 }
 
 #link-project {
@@ -91,19 +108,55 @@ footer {
     margin-left: 30px;
 }
 
+#description-left #link-project {
+    font-size: 30px;
+    text-decoration: none;
+    font-weight: 900;
+    text-align: start;
+    margin-left: -20px;
+}
+
+#description-left h2 {
+    font-size: 40px;
+    text-decoration: underline;
+}
+
 #description-right {
     position: relative;
-    top: 0px;
+    top: 30px;
     grid-column: 4 / span 4;
-    margin-left: 100px;
+    margin-left: 120px;
+}
+
+#description-right #link-project {
+    font-size: 50px;
+    text-decoration: none;
+    text-align: start;
+}
+
+.parent-screenshot {
+    position: relative;
+    overflow: hidden;
+    width: 600px;
+    height: 500px;
+    border: rgb(0, 0, 0) solid 2px;
+    border-radius: 0% 15% 15% 15% / 20% 20% 20% 20%;
 }
 
 .description-image {
-    position: relative;
     width: 600px;
-    height: 400px;
+    height: 500px;
+    border-radius: 0% 15% 15% 15% / 20% 20% 20% 20%;
+    object-fit: cover;
+    transition: all .5s;
+}
+
+.parent-screenshot:hover .description-image,
+.parent-screenshot:focus .child {
+    transform: scale(1.2);
 }
 
 .description-text {
     position: relative;
+    font-size: 25px;
 }

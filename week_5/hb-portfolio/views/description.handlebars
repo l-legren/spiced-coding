@@ -4,11 +4,13 @@
         {{> projectList }}
     </div>
     <div class="container" id="description-right">
-        <h2>{{selectedProject.name}}</h2>
-        <img 
-        class="description-image"
-        src="/{{selectedProject.directory}}/screenshot.jpg" 
-        alt="screenshot of project">
+        <a id="link-project" href="/{{selectedProject.directory}}">{{playWith selectedProject.name}}</a>
+        <div class="parent-screenshot">
+            <img 
+            class="description-image"
+            src="/{{selectedProject.directory}}/screenshot.jpg" 
+            alt="screenshot of project">
+        </div>
         <p class="description-text">{{selectedProject.description}}</p>
     </div>
 </div>
