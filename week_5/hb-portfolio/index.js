@@ -4,8 +4,6 @@ const hb = require("express-handlebars");
 const projects = require("./projects.json");
 // const { projectList } = require("./projectList");
 
-console.log(projects);
-
 // this configures express to use express-handlebars as the template engine
 app.engine("handlebars", hb());
 app.set("view engine", "handlebars");
@@ -27,6 +25,26 @@ app.get("/connect4", (req, res) => {
 
 app.get("/spotify_handlebars", (req, res) => {
     res.sendFile(`${__dirname}/projects/spotify_handlebars`);
+});
+
+app.get("/projects/:project", (req, res) => {
+    
+    const { project } = req.params;
+    const selectedProject = projects.find(prj => { 
+        return prj.directory == project; 
+    });
+    console.log(selectedProject);
+    if (selectedProject) {
+        res.render("description", {
+            layout: "main",
+            projects,
+            selectedProject,
+            // project_name: req.url.slice(10)
+        });
+    } else {
+        res.status(404);
+        res.send("Page not found");
+    }
 });
 
 app.listen(8080, () => console.log("hb express listening on port 8080"));

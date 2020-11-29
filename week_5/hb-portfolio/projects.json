@@ -1,8 +1,22 @@
 [
     {
-        "project": "connect4"
+        "name": "Connect 4",
+        "directory": "connect4",
+        "description": "Lorem ipsum connect4"
     },
     {
-        "project": "spotify_handlebars"
+        "name": "Spotify API",
+        "directory": "spotify_handlebars",
+        "description": "Lorem ipsum spoti"
+    },
+    {
+        "name": "Incremental Search",
+        "directory": "incremental_2",
+        "description": "Lorem ipsum incremental"
+    },
+    {
+        "name": "Panes",
+        "directory": "panes",
+        "description":"Lorem ipsum panes"
     }
 ]

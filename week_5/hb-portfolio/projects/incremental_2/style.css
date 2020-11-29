@@ -1,0 +1,16 @@
+input {
+    border: 2px solid red;
+    border-radius: 2px;
+    background-color: lightblue;
+    width: 200px;
+}
+
+.results-container {
+    background-color: lightgoldenrodyellow;
+    width: 200px;
+}
+
+.highlighted {
+    background-color: pink;
+    color:darkblue;
+}

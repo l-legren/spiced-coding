@@ -1,0 +1,14 @@
+<div class="container" id="description">
+    <div class="container" id="description-left">
+        <h2>My projects</h2>
+        {{> projectList }}
+    </div>
+    <div class="container" id="description-right">
+        <h2>{{selectedProject.name}}</h2>
+        <img 
+        class="description-image"
+        src="/{{selectedProject.directory}}/screenshot.jpg" 
+        alt="screenshot of project">
+        <p class="description-text">{{selectedProject.description}}</p>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+{{#projects}}
+    <div class="container" id="single-project">
+        <a id="link-project" href="/{{directory}}">{{name}}</a>
+        {{#if ../pict}}
+        <img 
+        class="screenshot" 
+        src="/{{directory}}/screenshot.jpg" 
+        alt="screenshot of the project">
+        {{/if}}
+    </div>
+{{/projects}}
