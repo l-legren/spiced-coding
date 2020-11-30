@@ -5,11 +5,8 @@ module.exports.getToken = (callback) => {
     // Requesting bearer token from twitter
     // This is an ASYNCHRONOUS process
     // need to wait until it's finished, therefore we need the callback 
-    // console.log("getToken is correctly called");
     const creds = `${twitterKey}:${twitterSecret}`;
     const encodedCreds = Buffer.from(creds).toString("base64");
-
-    // console.log(creds, encodedCreds);
 
     const config = {
         method: "POST",
@@ -30,7 +27,6 @@ module.exports.getToken = (callback) => {
         res.on("data", chunk => body += chunk);
         res.on("end", () => {
             const parsedBody = JSON.parse(body);
-            // console.log("parsedBody: ", parsedBody);
             callback(null, parsedBody.access_token);
         });
     }
@@ -43,7 +39,7 @@ module.exports.getTweets = (bearerToken, callback) => {
     //Once we have our bearerToken we can get the tweets
     // This is also ASYNCHRONOUS process -> Hence another callback
     // WE need to send the bearerToken everytime we make a request
-    const configTweet = {
+    const config = {
         method: "GET",
         host: "api.twitter.com",
         path:
@@ -58,19 +54,26 @@ module.exports.getTweets = (bearerToken, callback) => {
             callback(res.statusCode);
             return;
         }
-        let arrayTweets = [];
-        res.on("data", chunk => arrayTweets.push(chunk));
+        let body = "";
+        res.on("data", (chunk) => {
+            body += chunk;
+        });
         res.on("end", () => {
-            console.log("arrayTweets: ", arrayTweets[0]);
+            const parsedBody = JSON.parse(body);
+            console.log("parsedBody: ", parsedBody[0].full_text);
+            callback(parsedBody);
         });
             
     }
 
-    const reqTweet = https.request(configTweet, tweetsCallback);
-    reqTweet.end();
+    const req = https.request(config, tweetsCallback);
+    req.end();
 };
 
 module.exports.filterTweets = (tweets) => {
     // Once we have our tweets we will pass them to this function to filter and sort them into the format we need
-    // This is a SYNCHRONOU process
+    // This is a SYNCHRONOUS process
+    for (let i = 0; i < tweets.length; i++) {
+        console.log("Tweets Full Text: ", tweets[i].full_text);
+    }
 };
