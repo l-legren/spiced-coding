@@ -74,13 +74,24 @@ module.exports.filterTweets = (tweets) => {
     // Once we have our tweets we will pass them to this function to filter and sort them into the format we need
     // This is a SYNCHRONOUS process
     const result = [];
-    const tweet = {};
+
     for (let i = 0; i < tweets.length; i++) {
-        tweet.text = tweets[i].full_text;
-        tweet.url = tweets[i].entities.urls[0].url;
-        result.push(tweet);
-        // console.log(tweets[i].entities.urls[0].url);
-        // console.log("result: ", result);
+        if (tweets[i].entities.urls.length === 1) {
+            let tweet = {
+                text: "",
+                url: "",
+            };
+
+            const textNoUrl = tweets[i].full_text
+                .replace(tweets[i].entities.urls[0].url, "")
+                .replace(tweets[i].entities.media[0].url, "");
+
+            tweet.text = textNoUrl;
+            tweet.url = tweets[i].entities.urls[0].url;
+            result.push(tweet);
+
+            // console.log("result: ", result);
+        }
     }
     return result;
 };
