@@ -1,22 +1,32 @@
 const { stat, readdir } = require("fs").promises;
 
 const logSizes = (path) => {
-    const files = readdir(path, { withFileTypes : true }).then(
+    return readdir(path, { withFileTypes : true }).then(
         (content) => {
-            for (let i = 0; i < content.length; i++) {
-                if (content[i].isFile()) {                
-                    stat(`${path}/${content[i].name}`)
-                        .then(
-                            (stats) => {
-                                console.log(`${path}/${content[i].name}: `, stats.size);
+            var promisedArray = [];
+            for (let i = 0; i < content.length; i++) {                
+                var mySinglePromise = stat(`${path}/${content[i].name}`)
+                    .then(
+                        (stats) => {
+                            if (content[i].isFile()) {
+                                console.log(
+                                    `${path}/${content[i].name}: `,
+                                    stats.size
+                                );
+                            } else {
+                                return logSizes(
+                                    `${path}/${content[i].name}`
+                                );
                             }
-                        );
-                } else {
-                    logSizes(`${path}/${content[i].name}`);
-                }
+                        }
+                    );
+                promisedArray.push(mySinglePromise);
             }
-        });
-    return files;
+            return Promise.all(promisedArray);
+        })
+        .catch(err => console.error(err));
 };
 
-logSizes("./files");
+logSizes("./files").then(() => {
+    console.log("done!");
+});
