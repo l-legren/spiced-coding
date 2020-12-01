@@ -24,8 +24,9 @@ app.get("/data.json", (req, res) => {
             // console.log("tweets: ", tweets);
             // 3. Filter them into the format you need
             const filteredTweets = filterTweets(tweets);
+            console.log(filteredTweets);
             // 4. Send data back as JSON
-            // res.json(filteredTweets);
+            res.json(filteredTweets);
         });
     });
 });

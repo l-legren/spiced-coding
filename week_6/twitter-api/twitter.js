@@ -60,8 +60,8 @@ module.exports.getTweets = (bearerToken, callback) => {
         });
         res.on("end", () => {
             const parsedBody = JSON.parse(body);
-            console.log("parsedBody: ", parsedBody[0].full_text);
-            callback(parsedBody);
+            // console.log("parsedBody: ", parsedBody[0].full_text);
+            callback(null, parsedBody);
         });
             
     }
@@ -73,7 +73,14 @@ module.exports.getTweets = (bearerToken, callback) => {
 module.exports.filterTweets = (tweets) => {
     // Once we have our tweets we will pass them to this function to filter and sort them into the format we need
     // This is a SYNCHRONOUS process
+    const result = [];
+    const tweet = {};
     for (let i = 0; i < tweets.length; i++) {
-        console.log("Tweets Full Text: ", tweets[i].full_text);
+        tweet.text = tweets[i].full_text;
+        tweet.url = tweets[i].entities.urls[0].url;
+        result.push(tweet);
+        // console.log(tweets[i].entities.urls[0].url);
+        // console.log("result: ", result);
     }
+    return result;
 };
